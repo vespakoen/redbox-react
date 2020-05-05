@@ -113,7 +113,7 @@ export class RedBoxError extends Component {
         <div style={frame} key={index}>
           <div>{f.functionName}</div>
           <div style={file}>
-            <a href="#" onClick={() => cep.util.openURLInDefaultBrowser(url)} style={linkToFile}>{text}</a>
+            <a href="#" onClick={() => { this.IFRAME.current.url = url }} style={linkToFile}>{text}</a>
           </div>
         </div>
       )
@@ -148,6 +148,7 @@ export class RedBoxError extends Component {
 
     return (
       <div style={redbox} className={className}>
+        <iframe ref={this.IFRAME} style={{ width: 0, height: 0, border: 'none' }} />
         <div style={message}>{error.name}: {error.message}</div>
         <div style={stack}>{frames}</div>
       </div>
