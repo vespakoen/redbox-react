@@ -113,7 +113,7 @@ export class RedBoxError extends Component {
         <div style={frame} key={index}>
           <div>{f.functionName}</div>
           <div style={file}>
-            <a href={url} style={linkToFile}>{text}</a>
+            <a href={url} target="_blank" style={linkToFile}>{text}</a>
           </div>
         </div>
       )
